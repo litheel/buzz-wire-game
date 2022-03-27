@@ -6,19 +6,19 @@
 
 // void seven_seg_write(struct* seven_seg);
 
-#define LT_N    2
+#define LE      2
 #define A       3
 #define B       4
 #define C       5
 #define D       6
 void setup() {
-    pinMode(LT_N, OUTPUT);
+    pinMode(LE, OUTPUT);
     pinMode(A, OUTPUT);
     pinMode(B, OUTPUT);
     pinMode(C, OUTPUT);
     pinMode(D, OUTPUT);
-
-    digitalWrite(LT_N, HIGH);
+    
+    digitalWrite(LE, LOW);
 
     Serial.begin(9600);
 }
@@ -35,6 +35,8 @@ void loop() {
     digitalWrite(B, b);
     digitalWrite(C, c);
     digitalWrite(D, d);
+    digitalWrite(LE, HIGH);
+    digitalWrite(LE, LOW);
 
     seven_seg_val = seven_seg_val == 9 ? 0 : seven_seg_val+1;
 
